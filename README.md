@@ -1,29 +1,22 @@
 # AppImage Installer
 
-A small user-local installer for Linux AppImages. It copies an AppImage into
-`~/.local/opt/appimages` and creates a desktop launcher in
-`~/.local/share/applications`, so the application can be started from your
-desktop environment's app menu.
+Install AppImages for your user without root access. The installer copies each
+app to `~/.local/opt/appimages` and adds it to your desktop app menu. It does
+not download apps; use AppImages from sources you trust.
 
-## Open the graphical installer
+## Install an AppImage
 
-On KDE Plasma, open `install-appimage.sh` from Dolphin and choose **Execute**
-if prompted. The installer opens a file picker; select an AppImage to install.
-The first launch also adds **AppImage Installer** to your app menu, so later
-you can launch it there without opening a terminal. Other desktops can use
-`zenity` as the graphical dialog provider.
+On KDE Plasma, open `install-appimage.sh` and choose **Execute** if prompted.
+Select an AppImage in the file picker. The first graphical launch also adds
+**AppImage Installer** to your app menu. Other desktops need `zenity`.
 
-The installer copies the AppImage into `~/.local/opt/appimages` and creates a
-desktop launcher. No root access is required. It does not download AppImages;
-obtain them from a source you trust.
-
-To launch with an AppImage path from a terminal, you can also run:
+To install from a terminal, pass the AppImage path:
 
 ```sh
 ./install-appimage.sh ~/Downloads/MyApp.AppImage
 ```
 
-## Remove an installed app
+## Remove an app
 
-Delete the installed AppImage from `~/.local/opt/appimages` and its matching
-`.desktop` file from `~/.local/share/applications`.
+Delete its AppImage from `~/.local/opt/appimages` and its matching `.desktop`
+file from `~/.local/share/applications`.
